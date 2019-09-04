@@ -1,0 +1,45 @@
+body {
+    font-size: 14px;
+}
+body,
+html {
+    width: 100%;
+    overflow-x: hidden;
+    line-height: 1.4;
+    padding: 0;
+    margin: 0;
+    font-family: $font-family;
+    -webkit-overflow-scrolling: touch;
+}
+header, section, footer, nav {
+    display: grid;
+    justify-content: center;
+}
+picture {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    img {
+        width: 100%;
+        max-height: 100%;
+    }
+}
+button[type="submit"]:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p a {
+    position: relative;
+    padding: 0.5em;
+    margin: -0.5em;
+}
+  

@@ -1,0 +1,73 @@
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+@mixin arrow($direction, $color: black, $size: 4px) {
+    padding: $size;
+    border: $size solid $color;
+    border-width: 0 $size $size 0;
+    @include transition(all 400ms);
+    @if $direction == "left" {
+        transform: translateX(10px) rotate(135deg);
+        -webkit-transform: translateX(10px) rotate(135deg);
+        &:hover {
+            transform: translateX(0px) rotate(135deg);
+            -webkit-transform: translateX(0px) rotate(135deg);
+        }
+    } @else if $direction == "right" {
+        transform: translateX(-10px) rotate(-45deg);
+        -webkit-transform: translateX(-10px) rotate(-45deg);
+        &:hover {
+            transform: translateX(0px) rotate(-45deg);
+            -webkit-transform: translateX(0px) rotate(-45deg);
+        }
+    } @else if $direction == "up" {
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+        &:hover {
+            transform: translateY(10px) rotate(-135deg);
+            -webkit-transform: translateY(10px) rotate(-135deg);
+        }
+    } @else if $direction == "down" {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        &:hover {
+            transform: translateY(-10px) rotate(45deg);
+            -webkit-transform: translateY(-10px) rotate(45deg);
+        }
+    }
+    &:hover {
+        border-color: darken($color, 30%);
+    }
+}
+
+
+@mixin backgroundTopToBottom(
+    $backgroundDefault,
+    $backgroundAfter,
+    $timer: 400ms
+) {
+    transition: all $timer;
+    transform: translateZ(0);
+    background-color: $backgroundDefault;
+    position: relative;
+    z-index: 0;
+    &:before {
+        transition: all $timer;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $backgroundAfter;
+        transform: scaleY(0);
+        transform-origin: 50% 0%;
+    }
+    &:hover:before {
+        transform: scaleY(1);
+    }
+}
