@@ -13,18 +13,19 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
     "entry": ["./src/js/main.js", "./src/scss/main.scss"],
     "output": {
-        path: path.resolve(__dirname, './dist'),
+        path: __dirname + '/dist',
         filename: 'js/main.js',
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: false,
+        contentBase: __dirname + '/dist',
+        historyApiFallback: true,
         open: true,
         overlay: {
             warnings: false,
             errors: true,
             quiet: true,
-        }
+        },
     },
     module: {
         rules: [

@@ -1,21 +1,13 @@
 import Vue from 'vue'
-import routes from './routes'
-import Home from '../pages/home/home.vue';
-import NotFound from '../pages/404.vue'
+import router from './routes';
+import Router from 'vue-router';
+import App from './app.vue';
+Vue.use(Router);
 const app = new Vue({
-  el: '#app',
-  data: {
-    currentRoute: window.location.pathname,
-  },
-  computed: {
-    ViewComponent () {
-      return routes[this.currentRoute] || NotFound
-    }
-  },
-  render(h) {
-    return h(this.ViewComponent);
-  }
-})
+  render: h => h(App),
+  router,
+  components: {App}
+}).$mount('#app');
 
 window.addEventListener('popstate', () => {
   app.currentRoute = window.location.pathname;
