@@ -42,6 +42,5 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "./home.scss";
+<style scoped lang="scss">
 </style>
