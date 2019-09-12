@@ -1,26 +1,18 @@
 <template>
-  <div>
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icon">
-      <i class="fa fa-bars"></i>
-    </label>
+  <div class="main">
     <div class="content-container">
-      <div class="site-title">
-        <h1>Elite World Explorer</h1>
-      </div>
       <div class="content">
-        <h1>5 Best Desinations in the World</h1>
-        <img src="https://placehold.it/700x250" alt class />
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget nulla mollis, efficitur urna nec, viverra dolor. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent efficitur finibus eros sit amet sagittis. Ut sollicitudin sodales neque et volutpat. Curabitur dictum ante vel fermentum volutpat. Curabitur ac neque et erat viverra egestas.</p>
+        <router-view></router-view>
       </div>
     </div>
-    <div class="slideout-sidebar">
+    
+    <div class="menu">
+      <span class="menu-button"></span>
       <ul>
-        <li>Home</li>
-        <li>Catalog</li>
-        <li>About Us</li>
-        <li>Blog</li>
-        <li>Contact</li>
+        <li><router-link to="/nivel">Nível</router-link></li>
+        <li><router-link to="/tipoconteudo">Tipo Conteúdo</router-link></li>
+        <li><router-link to="/conteudo">Conteúdo</router-link></li>
+        <li><router-link to="/usuario">Usuário</router-link></li>
       </ul>
     </div>
   </div>
@@ -55,9 +47,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 .body {
   font-family: "Lato", arial, sans-serif;
   margin: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
 }
 
 /* -- main content -- */
@@ -65,10 +63,7 @@ export default {
   position: relative;
   z-index: 0;
   padding: 20px;
-  max-width: 700px;
-  margin: 0 auto;
   overflow: hidden;
-  transition: all 300ms ease-in-out;
 }
 
 .site-title {

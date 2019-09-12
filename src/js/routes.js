@@ -2,12 +2,15 @@ import Router from 'vue-router';
 import LoginComponent from '../pages/login/login.vue';
 import HomeComponent from '../pages/home/home.vue';
 import MenuComponent from '../pages/menu/menu.vue';
+import NivelComponent from '../pages/nivel/nivel.vue';
+import TipoConteudoComponent from '../pages/tipoconteudo/tipoconteudo.vue';
+import ConteudoComponent from '../pages/conteudo/conteudo.vue';
+import UsuarioComponent from '../pages/usuario/usuario.vue';
 import NotFound from '../pages/404.vue';
 
 export default new Router({
     mode: 'history',
-    routes: [
-        {
+    routes: [{
             path: '/home',
             name: 'home',
             component: HomeComponent
@@ -20,7 +23,28 @@ export default new Router({
         {
             path: '/menu',
             name: 'menu',
-            component: MenuComponent
+            component: MenuComponent,
+            children: [{
+                    path: '/nivel',
+                    name: 'nivel',
+                    component: NivelComponent
+                },
+                {
+                    path: '/tipoconteudo',
+                    name: 'tipoconteudo',
+                    component: TipoConteudoComponent
+                },
+                {
+                    path: '/conteudo',
+                    name: 'conteudo',
+                    component: ConteudoComponent
+                },
+                {
+                    path: '/usuario',
+                    name: 'usuario',
+                    component: UsuarioComponent
+                }
+            ]
         },
         {
             path: '/',

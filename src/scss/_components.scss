@@ -10,6 +10,7 @@ html {
     margin: 0;
     font-family: $font-family;
     -webkit-overflow-scrolling: touch;
+    height: 100%;
 }
 header, section, footer, nav {
     display: grid;
@@ -42,4 +43,7 @@ p a {
     padding: 0.5em;
     margin: -0.5em;
 }
-  
+
+ul {
+    padding: 0;
+}
