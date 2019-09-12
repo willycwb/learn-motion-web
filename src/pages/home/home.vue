@@ -2,12 +2,12 @@
   <div>
     <h1>App</h1>
     <div>
-      <a href="./login">Please click me, and let take you into the login page!!!</a>
+      <a href="#">Please click me, and let take you into the login page!!!</a>
     </div>
     <span>Before computed: {{ message }}</span>
     <br />
     <span>Afer computed: {{ computedMessage() }}</span>
-     <router-link to="/login">Go to Foo</router-link>
+     <router-link to="/login">LOGIN</router-link>
   </div>
 </template>
 
