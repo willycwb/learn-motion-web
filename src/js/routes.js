@@ -1,6 +1,7 @@
 import Router from 'vue-router';
 import LoginComponent from '../pages/login/login.vue';
 import HomeComponent from '../pages/home/home.vue';
+import MenuComponent from '../pages/menu/menu.vue';
 import NotFound from '../pages/404.vue';
 
 export default new Router({
@@ -15,6 +16,11 @@ export default new Router({
             path: '/login',
             name: 'login',
             component: LoginComponent
+        },
+        {
+            path: '/menu',
+            name: 'menu',
+            component: MenuComponent
         },
         {
             path: '/',
