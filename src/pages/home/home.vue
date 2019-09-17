@@ -1,13 +1,8 @@
 <template>
-  <div>
-    <h1>App</h1>
-    <div>
-      <a href="#">Please click me, and let take you into the login page!!!</a>
-    </div>
-    <span>Before computed: {{ message }}</span>
-    <br />
-    <span>Afer computed: {{ computedMessage() }}</span>
-     <router-link to="/login">LOGIN</router-link>
+  <div class="principal">
+    <div class="cabecalho"></div>
+    <div class="conteudo"></div>
+    <div class="rodape"></div>
   </div>
 </template>
 
@@ -19,28 +14,36 @@ export default {
     titleTemplate: "%s | Home"
   },
   data() {
-    return {
-      message: "Hello World!"
-    };
+    return {};
   },
-  computed: {
-    reversedMessage: function() {
-      return this.message
-        .split("")
-        .reverse()
-        .join("");
-    }
-  },
-  methods: {
-    computedMessage: function() {
-      return this.message
-        .split("")
-        .reverse()
-        .join("");
-    }
-  }
+  computed: {},
+  methods: {}
 };
 </script>
 
 <style scoped lang="scss">
+.principal {
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  // background-image: url("../../../web_assets/images/paisagem.jpg");
+}
+.cabecalho {
+  height: 150px;
+  width: 100%;
+  background-color: aquamarine;
+}
+.conteudo {
+  height: 700px;
+  width: 100%;
+  background-color: coral;
+}
+.rodape {
+  height: 100px;
+  width: 100%;
+  background-color: seagreen;
+}
 </style>

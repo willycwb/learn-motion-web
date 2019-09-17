@@ -7,3 +7,8 @@
 *::before {
   box-sizing: border-box;
 }
+
+body, html, #app {
+  height: 100%;
+  width: 100%;
+}
