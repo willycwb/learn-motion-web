@@ -33,9 +33,6 @@ export default {
   background-color: darkorange;
   position: relative;
   z-index: 0;
-  padding: 20px;
-  // max-width: 700px;
-  // margin: 0 auto;
   overflow: hidden;
   transition: all 300ms ease-in-out;
 }

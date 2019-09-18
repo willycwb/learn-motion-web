@@ -15,7 +15,7 @@
       <input
         class="submit"
         type="button"
-        v-on:click="login()"
+        @click="login()"
         id="submitLogin"
         value="Entrar"
         align="center"
@@ -40,13 +40,12 @@ export default {
   },
   data() {
     return {
-      email: "",
-      password: ""
+      email: "willy",
+      password: "123456"
     };
   },
   methods: {
     login() {
-      console.log(this.email);
       if (this.email != "" && this.password != "") {
         singIn(this.email, this.password)
           .then(r => {
@@ -59,6 +58,7 @@ export default {
           });
       } else {
         console.log("A username and password must be present");
+        alert('CHUP CHUP');
       }
     }
   }

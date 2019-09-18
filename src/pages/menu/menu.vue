@@ -1,9 +1,7 @@
 <template>
   <div class="main">
-    <div class="content-container">
-      <div class="content">
+    <div class="frame">
         <router-view></router-view>
-      </div>
     </div>
     
     <div class="menu">
@@ -13,13 +11,19 @@
         <li><router-link to="/tipoconteudo">Tipo Conteúdo</router-link></li>
         <li><router-link to="/conteudo">Conteúdo</router-link></li>
         <li><router-link to="/usuario">Usuário</router-link></li>
+        <li><input type="button" @click="buscaTodos()" value="Lista Todos"/></li>
+        <li><input type="button" @click="buscaUm()" value="Lista um"/></li>
+        <li><input type="button" @click="buscaTodos()" value="Criar"/></li>
+        <li><input type="button" @click="buscaTodos()" value="Editar"/></li>
+        <li><input type="button" @click="buscaTodos()" value="Deletar todos"/></li>
+        <li><input type="button" @click="buscaTodos()" value="Deletar um"/></li>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
-import { getAll } from "../../services/tiponivel";
+import { getAll, getById } from "../../services/tiponivel";
 import router from "../../js/routes";
 
 export default {
@@ -35,7 +39,14 @@ export default {
     };
   },
   methods: {
-    tiponivel() {
+    buscaUm() {
+      getById(2)
+        .then(r => {
+          console.log(r.data);
+        })
+        .catch(e => console.log(e.message));
+    },
+     buscaTodos() {
       getAll()
         .then(r => {
           console.log(r.data);
@@ -58,11 +69,16 @@ export default {
   justify-content: center;
 }
 
+.menuOpen {
+  left: 181px;
+  padding-right: 181px;
+  position: relative;
+}
+
 /* -- main content -- */
 .content-container {
   position: relative;
   z-index: 0;
-  padding: 20px;
   overflow: hidden;
 }
 

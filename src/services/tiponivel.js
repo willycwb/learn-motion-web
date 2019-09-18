@@ -8,3 +8,12 @@ export const getAll = () => {
         }
     })
 }
+
+export const getById = (id) => {
+    let token = JSON.parse(localStorage.getItem('token'));
+    return Http.get('/tiponivel/tiponivel/' + id, {
+        headers: {
+            Authorization: 'Bearer ' + token
+        }
+    })
+}
