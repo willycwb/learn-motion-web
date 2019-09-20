@@ -1,6 +1,8 @@
 import Router from 'vue-router';
 import LoginComponent from '../pages/login/login.vue';
 import HomeComponent from '../pages/home/home.vue';
+import HomeConteudoComponent from '../pages/home-conteudo/home-conteudo.vue';
+import HomeTipoComponent from '../pages/home-tipo/home-tipo.vue';
 import MenuComponent from '../pages/menu/menu.vue';
 import NivelComponent from '../pages/nivel/nivel.vue';
 import TipoConteudoComponent from '../pages/tipoconteudo/tipoconteudo.vue';
@@ -51,6 +53,16 @@ export default new Router({
             redirect: {
                 name: 'home'
             }
+        },
+        {
+            path: '/homeconteudo',
+            name: 'homeconteudo',
+            component: HomeConteudoComponent
+        },
+        {
+            path: '/hometipo',
+            name: 'hometipo',
+            component: HomeTipoComponent
         },
         {
             path: '/404',
