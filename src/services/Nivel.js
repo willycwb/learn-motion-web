@@ -2,7 +2,7 @@ import Http from './http';
 
 export const getAll = () => {
     let token = JSON.parse(localStorage.getItem('token'));
-    return Http.get('/tiponivel/tiponivel', {
+    return Http.get('/nivel/nivel', {
         headers: {
             Authorization: 'Bearer ' + token
         }
@@ -11,7 +11,7 @@ export const getAll = () => {
 
 export const getById = (id) => {
     let token = JSON.parse(localStorage.getItem('token'));
-    return Http.get('/tiponivel/tiponivel/' + id, {
+    return Http.get('/nivel/nivel/' + id, {
         headers: {
             Authorization: 'Bearer ' + token
         }
@@ -20,7 +20,7 @@ export const getById = (id) => {
 
 export const cadastro = () => {
     let token = JSON.parse(localStorage.getItem('token'));
-    return Http.post('/tiponivel/tiponivel', {
+    return Http.post('/nivel/nivel', {
         headers: {
             Authorization: 'Bearer ' + token
         }
@@ -29,7 +29,7 @@ export const cadastro = () => {
 
 export const alterar = () => {
     let token = JSON.parse(localStorage.getItem('token'));
-    return Http.put('/tiponivel/tiponivel', {
+    return Http.put('/nivel/nivel', {
         headers: {
             Authorization: 'Bearer ' + token
         }
@@ -38,7 +38,7 @@ export const alterar = () => {
 
 export const deleteById = (id) => {
     let token = JSON.parse(localStorage.getItem('token'));
-    return Http.delete('/tiponivel/tiponivel/' + id, {
+    return Http.delete('/nivel/nivel/' + id, {
         headers: {
             Authorization: 'Bearer ' + token
         }
@@ -47,7 +47,7 @@ export const deleteById = (id) => {
 
 export const deleteTodos = () => {
     let token = JSON.parse(localStorage.getItem('token'));
-    return Http.delete('/tiponivel/tiponivel', {
+    return Http.delete('/nivel/nivel', {
         headers: {
             Authorization: 'Bearer ' + token
         }
