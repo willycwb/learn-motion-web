@@ -33,7 +33,7 @@ import { singIn } from "../../services/login";
 import router from "../../js/routes";
 
 export default {
-  name: "Login",
+  name: "login",
   metaInfo: {
     title: "Learn Motion",
     titleTemplate: "%s | Login"
