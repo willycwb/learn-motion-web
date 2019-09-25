@@ -1,9 +1,23 @@
 <template>
   <div class="principal">
+
     <div class="conteudo">
+
       <div class="cabecalho">
         <a class="login" v-on:click="login()">Login</a>
       </div>
+
+      <div class="titulo">
+        <span>Titulo</span>
+      </div>
+
+      <div class="search">
+        <div class="search-wrapper">
+          <input type="text" v-model="search" placeholder="Search title.." />
+          <label>Search title:</label>
+        </div>
+      </div>
+
       <div class="niveis">
         <div class="card" v-for="nivel in niveis" v-bind:key="nivel.id">
           <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:100%" />
@@ -15,10 +29,13 @@
           </div>
         </div>
       </div>
+
     </div>
+
     <div class="rodape">
       <span class="rodapetexto">Copyright ® - 2019</span>
     </div>
+
   </div>
 </template>
 
