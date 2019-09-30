@@ -26,6 +26,7 @@ export default {
 .body {
   font-family: "Lato", arial, sans-serif;
   margin: 0;
+  height: 100%;
 }
 
 /* -- main content -- */
@@ -33,6 +34,7 @@ export default {
   background-color: crimson;
   position: relative;
   z-index: 0;
+  height: 100%;
   overflow: hidden;
   transition: all 300ms ease-in-out;
 }

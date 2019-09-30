@@ -1,6 +1,5 @@
 <template>
-  <div>
-  </div>
+  <h3>alo - {{page}}</h3>
 </template>
 
 <script>
@@ -11,7 +10,9 @@ export default {
     titleTemplate: "%s | Home Conteudo"
   },
   data() {
-    return {};
+    return {
+      page: this.$route.params.name
+    };
   },
   computed: {},
   methods: {}

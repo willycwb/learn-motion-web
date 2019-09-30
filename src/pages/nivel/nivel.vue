@@ -23,14 +23,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.body {
-  font-family: "Lato", arial, sans-serif;
-  margin: 0;
-}
 
 /* -- main content -- */
 .content-container {
   background-color: burlywood;
+  height: 100%;
   position: relative;
   z-index: 0;
   overflow: hidden;

@@ -13,13 +13,13 @@
 
       <div class="search">
         <div class="search-wrapper">
-          <input type="text" v-model="search" placeholder="Search title.." />
+          <input type="text" placeholder="Search title.." />
           <label>Search title:</label>
         </div>
       </div>
 
       <div class="niveis">
-        <div class="card" v-for="nivel in niveis" v-bind:key="nivel.id">
+        <div class="card" v-for="nivel in niveis" v-bind:key="nivel.id" v-on:click="conteudo(nivel.name)">
           <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:100%" />
           <div class="container">
             <h4>
@@ -29,6 +29,7 @@
           </div>
         </div>
       </div>
+    <div><a v-on:click="categorias()">Categorias</a></div>
 
     </div>
 
@@ -55,16 +56,19 @@ export default {
         {
           id: 1,
           titulo: "Básico",
+          name: 'basico',
           descricao: "Descrição Básico"
         },
         {
           id: 2,
           titulo: "Intermediario",
+          name: 'intermediario',
           descricao: "Descrição Intermediario"
         },
         {
           id: 3,
           titulo: "Avançado",
+          name: 'avancado',
           descricao: "Descrição Avançado"
         }
       ]
@@ -72,7 +76,7 @@ export default {
   },
   computed: {},
   created: function() {
-    this.buscaTodos();
+    //this.buscaTodos();
   },
   methods: {
     buscaTodos() {
@@ -84,6 +88,12 @@ export default {
     },
     login() {
       router.push({ name: "login" });
+    },
+    categorias() {
+      router.push({ name: "categorias" });
+    },
+    conteudo(name) {
+      router.push({ name: 'subconteudo', params: { name: name }})
     }
   }
 };

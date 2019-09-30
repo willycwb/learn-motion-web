@@ -62,107 +62,22 @@ export default {
 .body {
   font-family: "Lato", arial, sans-serif;
   margin: 0;
+  height: 100%;
+}
+
+.frame {
+  height: 100%;
 }
 
 .main {
   display: flex;
+  height: 100%;
   justify-content: center;
 }
 
 .menuOpen {
-  left: 181px;
-  padding-right: 181px;
+  padding-left: 185px;
   position: relative;
-}
-
-/* -- main content -- */
-.content-container {
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.site-title {
-  text-align: center;
-  border-bottom: 1px solid #111111;
-  margin-bottom: 24px;
-}
-
-.site-title h1 {
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-}
-
-img {
-  width: 100%;
-}
-
-.content p {
-  line-height: 1.6em;
-  margin-bottom: 24px;
-}
-
-/* -- Slideout Sidebar -- */
-
-.slideout-sidebar {
-  position: fixed;
-  top: 0;
-  left: -190px;
-  z-index: 0;
-  width: 150px;
-  height: 100%;
-  padding: 20px;
-  background-color: #212121;
-  transition: all 300ms ease-in-out;
-}
-
-.slideout-sidebar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.slideout-sidebar ul li {
-  cursor: pointer;
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(244, 244, 244, 0.4);
-  color: rgba(244, 244, 244, 0.7);
-}
-
-.slideout-sidebar ul li:last-child {
-  border-bottom: 0;
-}
-
-.slideout-sidebar ul li:hover {
-  color: rgba(244, 244, 244, 1);
-}
-
-/* -- Menu Icon -- */
-
-#menu-toggle {
-  display: none;
-}
-
-.menu-icon {
-  position: absolute;
-  top: 18px;
-  left: 30px;
-  font-size: 24px;
-  z-index: 1;
-  transition: all 300ms ease-in-out;
-}
-
-/*-- The Magic --*/
-#menu-toggle:checked ~ .slideout-sidebar {
-  left: 0px;
-}
-
-#menu-toggle:checked + .menu-icon {
-  left: 210px;
-}
-
-#menu-toggle:checked ~ .content-container {
-  padding-left: 190px;
+  transition: padding 300ms;
 }
 </style>

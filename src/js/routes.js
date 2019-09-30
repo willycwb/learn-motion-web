@@ -55,13 +55,13 @@ export default new Router({
             }
         },
         {
-            path: '/homeconteudo',
-            name: 'homeconteudo',
+            path: '/subconteudo/:name',
+            name: 'subconteudo',
             component: HomeConteudoComponent
         },
         {
-            path: '/hometipo',
-            name: 'hometipo',
+            path: '/categorias',
+            name: 'categorias',
             component: HomeTipoComponent
         },
         {
