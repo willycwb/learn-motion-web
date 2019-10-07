@@ -8,28 +8,39 @@
       </div>
 
       <div class="titulo">
-        <span>Titulo</span>
+        <span>Interface em Movimento</span>
       </div>
 
+      <div class="sub-titulo">
+        <span>Interface em Movimento</span>
+      </div>
+
+<div class="search-principal">
       <div class="search">
         <div class="search-wrapper">
           <input type="text" placeholder="Search title.." />
           <label>Search title:</label>
         </div>
       </div>
+      </div>
 
       <div class="niveis">
         <div class="card" v-for="nivel in niveis" v-bind:key="nivel.id" v-on:click="conteudo(nivel.name)">
-          <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:100%" />
+          <!-- <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:100%" /> -->
           <div class="container">
             <h4>
-              <b>{{nivel.titulo}}</b>
+              <b>{{nivel.tipoNivel.nome}}</b>
             </h4>
-            <p>{{nivel.descricao}}</p>
+            <p>{{nivel.tipoNivel.descricao}}</p>
           </div>
         </div>
       </div>
-    <div><a v-on:click="categorias()">Categorias</a></div>
+      <div>
+        <span>Não sei meu nivel</span>
+      </div>
+      <div class="categorias">
+        <a v-on:click="categorias()">Categorias</a>
+      </div>
 
     </div>
 
@@ -41,7 +52,7 @@
 </template>
 
 <script>
-import { getAll } from "../../services/tiponivel";
+import { getAll } from "../../services/publicoNivel";
 import router from "../../js/routes";
 
 export default {
@@ -53,36 +64,37 @@ export default {
   data() {
     return {
       niveis: [
-        {
-          id: 1,
-          titulo: "Básico",
-          name: 'basico',
-          descricao: "Descrição Básico"
-        },
-        {
-          id: 2,
-          titulo: "Intermediario",
-          name: 'intermediario',
-          descricao: "Descrição Intermediario"
-        },
-        {
-          id: 3,
-          titulo: "Avançado",
-          name: 'avancado',
-          descricao: "Descrição Avançado"
-        }
+        // {
+        //   id: 1,
+        //   titulo: "Básico",
+        //   name: 'basico',
+        //   descricao: "Descrição Básico"
+        // },
+        // {
+        //   id: 2,
+        //   titulo: "Intermediario",
+        //   name: 'intermediario',
+        //   descricao: "Descrição Intermediario"
+        // },
+        // {
+        //   id: 3,
+        //   titulo: "Avançado",
+        //   name: 'avancado',
+        //   descricao: "Descrição Avançado"
+        // }
       ]
     };
   },
   computed: {},
   created: function() {
-    //this.buscaTodos();
+    this.buscaTodos();
   },
   methods: {
     buscaTodos() {
       getAll()
         .then(r => {
           console.log(r.data);
+          this.niveis = r.data.result;
         })
         .catch(e => console.log(e.message));
     },
