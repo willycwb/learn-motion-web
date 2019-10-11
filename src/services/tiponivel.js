@@ -18,9 +18,13 @@ export const getById = (id) => {
     })
 }
 
-export const cadastro = () => {
+export const cadastro = (nivel) => {
     let token = JSON.parse(localStorage.getItem('token'));
-    return Http.post('/tiponivel/tiponivel', {
+    return Http.post('/tiponivel/tiponivel', 
+    {
+        nivel
+    },
+    {
         headers: {
             Authorization: 'Bearer ' + token
         }

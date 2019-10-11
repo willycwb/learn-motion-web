@@ -4,20 +4,80 @@
         <h1>Nível</h1>
       </div>
       <div class="content">
-        <h1>5 Best Desinations in the World</h1>
-        <img src="https://placehold.it/700x250" alt class />
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget nulla mollis, efficitur urna nec, viverra dolor. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent efficitur finibus eros sit amet sagittis. Ut sollicitudin sodales neque et volutpat. Curabitur dictum ante vel fermentum volutpat. Curabitur ac neque et erat viverra egestas.</p>
+        
+        <div class="aaa">
+          <label class="label" for="">Tipo Nivel</label>
+          <select v-model="tpniveis">
+            <option v-bind:value="{ number: 123 }">LALALA</option>
+            <option v-bind:value="{ number: 123 }">BUCETA</option>
+            <option v-bind:value="{ number: 123 }">ALO</option>
+            <option v-bind:value="{ number: 123 }">PIERRE</option>
+            <option v-bind:value="{ number: 123 }">XUXUBILAU</option>
+          </select>
+        </div>
+
+        <div class="aaa">
+          <label class="label" for="">Titulo</label>
+          <input v-model="nivel.titulo" type="text">
+        </div>
+
+        <div class="aaa">
+          <label class="label" for="">Sub titulo</label>
+          <input v-model="nivel.subtitulo" type="text">
+        </div>
+
+        <div class="aaa">
+          <label class="label" for="">Descrição</label>
+          <input v-model="nivel.descricao" type="text">
+        </div>
+
+        <div class="aaa">
+          <label class="label" for="">Backgroud</label>
+          <input type="file">
+        </div>
+
+        <button>salvar</button>
+
       </div>
     </div>
 </template>
 
 <script>
-
+import { getAll, cadastro } from "../../services/tiponivel";
 export default {
   name: "nivel",
   metaInfo: {
     title: "Learn Motion",
     titleTemplate: "%s | Nível"
+  },
+  data() {
+    return {
+      tpniveis: [],
+      nivel: {
+        id: null,
+        tiponivel: null,
+        titulo: '',
+        subtitulo: '',
+        descricao: '',
+      }
+    };
+  },
+  created: function() {
+    this.buscaTipoNivel();
+  },
+  methods: {
+    buscaTipoNivel() {
+      getAll()
+        .then(r => {
+          console.log(r.data);
+          this.tpniveis = r.data.result;
+        })
+        .catch(e => console.log(e.message));
+    },
+    cadastrar() {
+
+
+    }
   }
 };
 </script>
@@ -53,6 +113,15 @@ img {
 .content p {
   line-height: 1.6em;
   margin-bottom: 24px;
+
+}
+.aaa{
+  height: 100%;
+  padding: 10px;
+}
+
+.label {
+  width: 50px;
 }
 
 </style>

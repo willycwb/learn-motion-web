@@ -13,7 +13,7 @@
   background-position: center;
   background-image: url("https://wallpaperaccess.com/full/729396.jpg");
   display: grid;
-  grid-template-rows: 20px 150px 50px 50px 1fr 100px 100px;
+  grid-template-rows: 20px 150px 50px 150px 1fr 100px 100px;
 }
 
 .cabecalho {
@@ -67,14 +67,14 @@
 
 .search {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   height: 100%;
-  width: 50%;
+  width: 80%;
 }
 
 .search-wrapper {
-  width: 50%;
+  //width: 50%;
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -125,6 +125,32 @@
   padding-top: 20px;
 }
 
+.meu-nivel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .meu-nivel-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+
+    .texto {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      cursor: pointer;
+    }
+
+  }
+
+}
+
 .categorias {
   display: flex;
     justify-content: center;
@@ -162,5 +188,16 @@
 }
 
 .container {
-  padding: 2px 16px;
+  height: 100%;
+  padding: 25px 0px 0px 32px;
+
+  h4 {
+    height: 77.59px;
+    width: 161px;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+  }
 }
