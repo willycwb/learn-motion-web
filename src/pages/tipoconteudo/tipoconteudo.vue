@@ -4,20 +4,65 @@
         <h1>Tipo Conteúdo</h1>
       </div>
       <div class="content">
-        <h1>5 Best Desinations in the World</h1>
-        <img src="https://placehold.it/700x250" alt class />
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget nulla mollis, efficitur urna nec, viverra dolor. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent efficitur finibus eros sit amet sagittis. Ut sollicitudin sodales neque et volutpat. Curabitur dictum ante vel fermentum volutpat. Curabitur ac neque et erat viverra egestas.</p>
+
+       <div class="Tipo Conteudo">
+          <label class="label" for="">Tipo Conteudo</label>
+          <select v-model="tpconteudo">
+            <option v-bind:value="{ number: 123 }">LALALA</option>
+          </select>
+        </div>
+
+        <div class="descricao">
+          <label class="label" for="">Descricao</label>
+          <input v-model="tipoconteudo.descricao" type="text">
+        </div>
+
+        <div class="nome">
+          <label class="label" for="">Nome</label>
+          <input v-model="tipoconteudo.nome" type="text">
+        </div>
+
+         <button>salvar</button>
+
       </div>
     </div>
 </template>
 
 <script>
-
+import { getAll, cadastro } from "../../services/tipoconteudo";
 export default {
   name: "tipoconteudo",
   metaInfo: {
     title: "Learn Motion",
     titleTemplate: "%s | Tipo Conteudo"
+  },
+  data() {
+    return {
+      tpconteudo: [],
+      tipoconteudo: {
+        id: null,
+        descricao: '',
+        nome: '',
+        selected: null
+      }
+    };
+  },
+  created: function() {
+    this.buscaConteudo();
+  },
+  methods: {
+    buscaConteudo() {
+      getAll()
+        .then(r => {
+          console.log(r.data);
+          this.tipoconteudo = r.data.result;
+        })
+        .catch(e => console.log(e.message));
+    },
+    cadastrar() {
+
+
+    }
   }
 };
 </script>

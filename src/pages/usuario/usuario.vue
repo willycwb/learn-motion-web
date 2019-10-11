@@ -4,21 +4,40 @@
         <h1>Usuário</h1>
       </div>
       <div class="content">
-        <h1>5 Best Desinations in the World</h1>
-        <img src="https://placehold.it/700x250" alt class />
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget nulla mollis, efficitur urna nec, viverra dolor. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent efficitur finibus eros sit amet sagittis. Ut sollicitudin sodales neque et volutpat. Curabitur dictum ante vel fermentum volutpat. Curabitur ac neque et erat viverra egestas.</p>
+        <div class="email">
+          <label class="label" for="">Email</label>
+          <input v-model="usuario.email" type="text">
+        </div>
+
+        <div class="senha">
+          <label class="label" for="">Senha</label>
+          <input v-model="usuario.senha" type="text">
+        </div>
+
+         <button>salvar</button>
       </div>
     </div>
 </template>
 
 <script>
-
+import { getAll } from "../../services/usuario";
 export default {
   name: "usuario",
   metaInfo: {
     title: "Learn Motion",
     titleTemplate: "%s | Usuário"
+  },
+ data() {
+    return {
+      usuario: {
+        id: null,
+        email: '',
+        senha: '',
+        token: '',
+      },
+    };
   }
+
 };
 </script>
 

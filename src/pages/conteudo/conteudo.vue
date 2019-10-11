@@ -4,20 +4,44 @@
         <h1>Conteúdo</h1>
       </div>
       <div class="content">
-        <h1>5 Best Desinations in the World</h1>
-        <img src="https://placehold.it/700x250" alt class />
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget nulla mollis, efficitur urna nec, viverra dolor. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent efficitur finibus eros sit amet sagittis. Ut sollicitudin sodales neque et volutpat. Curabitur dictum ante vel fermentum volutpat. Curabitur ac neque et erat viverra egestas.</p>
+        <div class="Conteudo">
+          <label class="label" for="">Conteudo</label>
+          <select v-model="conteudo">
+            <option v-bind:value="{ number: 123 }">LALALA</option>
+          </select>
+        </div>
+
+        <div class="conteudos">
+          <label class="label" for="">Conteudos</label>
+          <input v-model="conteudo.conteudos" type="text">
+        </div>
+
+         <button>salvar</button>
       </div>
     </div>
 </template>
 
 <script>
-
+import { getAll, cadastro } from "../../services/conteudo";
 export default {
   name: "conteudo",
   metaInfo: {
     title: "Learn Motion",
     titleTemplate: "%s | Conteúdo"
+  },
+  data() {
+    return {
+      conteudo: {
+        id: null,
+      },
+      nivel: {
+        id: null,
+        tiponivel: null,
+        titulo: '',
+        subtitulo: '',
+        descricao: '',
+      }
+    };
   }
 };
 </script>

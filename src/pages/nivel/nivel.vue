@@ -9,10 +9,10 @@
           <label class="label" for="">Tipo Nivel</label>
           <select v-model="tpniveis">
             <option v-bind:value="{ number: 123 }">LALALA</option>
-            <option v-bind:value="{ number: 123 }">BUCETA</option>
-            <option v-bind:value="{ number: 123 }">ALO</option>
-            <option v-bind:value="{ number: 123 }">PIERRE</option>
-            <option v-bind:value="{ number: 123 }">XUXUBILAU</option>
+            <option v-bind:value="{ number: 124 }">BUCETA</option>
+            <option v-bind:value="{ number: 125 }">ALO</option>
+            <option v-bind:value="{ number: 126 }">PIERRE</option>
+            <option v-bind:value="{ number: 127 }">XUXUBILAU</option>
           </select>
         </div>
 
